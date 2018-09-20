@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>记录自己记不住的知识，追求不断进步-个人博客</title>
+		<link rel="icon" href="../images/wo5.jpg" />
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/index.css" />
+		<link rel="stylesheet" href="../css/swiper-4.3.3.min.css" />
+	</head>
+	<body>
+		<!--顶部导航栏-->
+		<div class="topNav">
+			<div class="Nav">
+				<div class="Tit">
+					<i><img src="../images/hua.png" alt="" /></i>
+					<span class="backhome"><!--露待、日晞。-->Happyン露</span>
+				</div>
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">学无止境</a></li>
+					<li><a href="slowlife.html" target="_self">慢生活</a></li>
+					<li><a href="aboutme.html" target="_self">关于我</a></li>
+					<li><a href="mood.html" target="_self">心情</a></li>
+					<li><a href="#">模板分享</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--中间内容-->
+		<div class="main">
+			<!--轮播图-->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="../images/01.jpg">
+					</div>
+					<div class="swiper-slide">
+						<img src="../images/02.jpg">
+					</div>
+					<div class="swiper-slide">
+						<img src="../images/03.jpg">
+					</div>
+				</div>
+				<!--<div class="swiper-pagination"></div>-->
+				<div class="swiper-button-prev swiper-button-white"></div>
+    			<div class="swiper-button-next swiper-button-white"></div>
+			</div>
+			
+			<div class="titleblog">
+				2017双十博客上线，一切是新的起点，新的开始。只记录记不住的--知识。追求简单，醒目。留下一些风景，一些足迹，一些感慨！！！有志者，事竟成。破釜沉舟百二秦关终属楚。苦心人，天不负。卧薪尝胆三千越甲可吞吴。  
+			</div>
+			<!--左面新闻-->
+			<div class="news">
+				<h2 class="hometitle">最新文章</h2>
+				<ul class="lists">
+					
+				</ul>
+				<script type="text/template" id="Boke">
+					<li>
+						<h3>
+							<span>@title1@</span>
+							<a href="#">@title2@</a>
+						</h3>
+						<div class="cons">
+							<span>
+								<a href="#" title="php 常用数组函数">
+									<img src="@photo@" alt="" />
+								</a>
+							</span>
+							<p>@content@</p>
+						</div>
+						<div class="autor">
+							<span class="icon"></span>
+							<span class="time">@time@</span>
+							<span class="liulan">浏览（<a href="#">10</a>）</span>
+							<span class="read"><a href="#">阅读原文>></a></span>
+						</div>
+						<div class="line"></div>
+					</li>
+				</script>
+				<script src="../js/jquery-1.8.3.min.js"></script>
+				<script>
+					(function(){
+						class News{
+							constructor(){
+								this.init();
+							}
+							init(){
+								this.searchFn();
+							}
+							searchFn(){
+								var templateString = $("#Boke").html();
+								$.post("../php/test.php",function(data){
+									$(".lists").empty();
+									if(!data.data) return;
+									data = typeof data == "object" ? data : eval("("+data+")");
+									var dataArry = data.data;	
+									for (var i = 0; i < dataArry.length; i++) {
+										var DOMString = chuliFn(templateString,dataArry[i]);
+											$(".lists").append(DOMString);
+										}
+										function chuliFn(templateString,data){
+											return templateString.replace(/\@([a-z\w]+)\@/g,function(match,$1,index,string){
+												return data[$1];
+										})
+									}
+								})
+							}
+						}
+						new News()
+					})()
+				</script>
+			</div>
+			<!--右面模板排行-->
+			<div class="rbox">
+				<div class="paihang">
+					<h2 class="hometitle">模板排行</h2>
+					<ul>
+						<li>
+							<b><a href="#">个人博客模板(海洋蓝）</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/001.jpg" alt="" /></i>
+									借鉴杨青的模板，添加了一些自己的特点。模板使用html5+css3，简单，大气，清新。主色为蓝色(个...
+								</p>
+							</a>
+						</li>
+						<li>
+							<b><a href="#">简易相册浏览插件</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/002.jpg" alt="" /></i>
+									支持键盘左右切换，列表查看，简易相册浏览插件。...
+								</p>
+							</a>
+						</li>
+						<li>
+							<b><a href="#">php将页面下载成pdf</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/003.jpg" alt="" /></i>
+									php将页面下载成pdf，保存页面信息...
+								</p>
+							</a>
+						</li>
+						<li>
+							<b><a href="#">网页模仿电脑QQ</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/004.jpg" alt="" /></i>
+									html+css+特效实现网页模仿电脑QQ...
+								</p>
+							</a>
+						</li>
+						<li>
+							<b><a href="#">磨房模板_发现心世界</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/005.jpg" alt="" /></i>
+									网站模板分享,使用前端框架，适应手机端...
+								</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="paihang">
+					<h2 class="hometitle">博主推荐</h2>
+					<ul>
+						<li>
+							<b><a href="#">重庆游乐园一日游</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/006.jpg" alt="" /></i>
+									重庆游乐园一日游...
+								</p>
+							</a>
+						</li>
+						<li>
+							<b><a href="#">巴中光雾山 童话世界 人间仙境</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/007.jpg" alt="" /></i>
+									光雾山风景区:国家AAAA级旅游景区、国家重点风景名胜区、国家地质公园,被誉为“清凉氧吧”、“中国红...
+								</p>
+							</a>
+						</li>
+						<li>
+							<b><a href="#">阳光正好，微风不燥</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/008.jpg" alt="" /></i>
+									阴雨绵绵总算过去，一缕阳光照耀，冲刷昔日的阴霾...
+								</p>
+							</a>
+						</li>
+						<li>
+							<b><a href="#">开心笑段,有点逗B有点二</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/009.jpg" alt="" /></i>
+									二营长，你他娘的意大利。。。面呢，端上来让我尝尝！有哪些可以一个人玩而且推理性很强的游戏？我刚才想干...
+								</p>
+							</a>
+						</li>
+						<li>
+							<b><a href="#"> 有意思的句子：考试真是so esay，哪里不会考哪里</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/010.jpg" alt="" /></i>
+									考试真是so esay，哪里不会考哪里。考试不是谈恋爱，请不要眉目传情；考试不是DOTA，请不要团队...
+								</p>
+							</a>
+						</li>
+						<li>
+							<b><a href="#">励志说说带图片：累了想想灰太狼，想想光头强</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/011.jpg" alt="" /></i>
+									拥有希望，也许会失望，但放弃希望，却一定绝望...
+								</p>
+							</a>
+						</li>
+						<li>
+							<b><a href="#">11.11</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/012.png" alt="" /></i>
+									今天是什么？？？节日？？？单身汪的节日？？？然后呢……双十一啊，意味着什么呢？？？购物，shoppi...
+								</p>
+							</a>
+						</li>
+						<li>
+							<b><a href="#">搞笑的gif图片</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/013.gif" alt="" /></i>
+									搞笑的gif图片，收集乐趣，传播乐趣。...
+								</p>
+							</a>
+						</li>
+						<li>
+							<b><a href="#">lol s7全球比赛</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/014.jpg" alt="" /></i>
+									lol s7全球比赛，决赛在鸟巢举行，RNG进军4强，EDG止步16强...
+								</p>
+							</a>
+						</li>
+						<li>
+							<b><a href="#">DarryRing语录</a></b>
+							<a href="#">
+								<p>
+									<i><img src="../images/015.jpg" alt="" /></i>
+									  爱情需要表达，为爱人沏一杯热茶，给爱人掖好被角，跟爱人开一个小玩笑。当然。 茶可能烫了，被角可能...
+								</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="links">
+					<h2 class="hometitle">友情链接</h2>
+					<div class="tagBall">
+					  <a class="tag" href="#">Rat's Blog</a>
+					  <a class="tag" href="#">田珊珊个人博客</a>
+					  <a class="tag" href="#">小叶个人博客</a>
+					  <a class="tag" href="#">小石头的博客</a>
+					  <a class="tag" href="#">杨青博客</a>
+					  <a class="tag" href="#">情殇个人博客</a>
+					  <a class="tag" href="#">郭健博客</a>
+					  <a class="tag" href="#">梁钟霖个人博客</a>
+					  <a class="tag" href="#">Rat's Blog</a>
+					  <a class="tag" href="#">田珊珊个人博客</a>
+					  <a class="tag" href="#">小叶个人博客</a>
+					  <a class="tag" href="#">小石头的博客</a>
+					  <a class="tag" href="#">杨青博客</a>
+					  <a class="tag" href="#">情殇个人博客</a>
+					  <a class="tag" href="#">郭健博客</a>
+					  <a class="tag" href="#">梁钟霖个人博客</a>
+					  <a class="tag" href="#">Rat's Blog</a>
+					  <a class="tag" href="#">田珊珊个人博客</a>
+					  <a class="tag" href="#">小叶个人博客</a>
+					  <a class="tag" href="#">小石头的博客</a>
+					  <a class="tag" href="#">杨青博客</a>
+					  <a class="tag" href="#">情殇个人博客</a>
+					  <a class="tag" href="#">郭健博客</a>
+					  <a class="tag" href="#">梁钟霖个人博客</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--脚部-->
+		<footer>
+			<p>
+				<a href="#">网站地图</a>
+				Design by 
+				<a href="#">碧羽墨轩个人博客 </a>
+				<a href="#">蜀ICP备 17034318号</a>
+			</p>
+		</footer>
+		<!-- 返回顶部效果 -->
+		<div class="fanhui">☁</div>
+	</body>
+</html>
+<script src="../js/index.js"></script>
+<script src="../js/swiper-4.3.3.min.js"></script>
+<script>
+	var mySwiper = new Swiper ('.swiper-container', { 
+		autoplay:true,
+	    loop: true,
+		observe:true,
+		observeParents:true,
+	    // 如果需要分页器
+	    pagination: {
+	      el: '.swiper-pagination',
+	      clickable :true,
+	    },
+	    navigation: {
+	      nextEl: '.swiper-button-next',
+	      prevEl: '.swiper-button-prev',
+	    }
+	})        
+</script>
+<script src="../js/yun.js"></script>
+

@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+body {
+  background: url(../images/bg.png) no-repeat top 60px center #90d7ec;
+}
+.topNav {
+  width: 100%;
+  height: 46px;
+  background: #009ad6;
+  box-shadow: #145d7b 0px 1px 5px;
+  z-index: 9999;
+  position: fixed;
+}
+.topNav .Nav {
+  width: 1200px;
+  height: 46px;
+  margin: 0 auto;
+}
+.topNav .Nav .Tit {
+  height: 46px;
+  line-height: 46px;
+  float: left;
+}
+.topNav .Nav .Tit i img {
+  color: white;
+  margin-right: 8px;
+  animation: fa-spin 2s infinite linear;
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.topNav .Nav .Tit span {
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Architects Daughter', cursive;
+}
+.topNav .Nav ul {
+  text-align: right;
+  height: 46px;
+  line-height: 46px;
+}
+.topNav .Nav ul li {
+  display: inline;
+  font-size: 16px;
+  padding: 0px 20px;
+}
+.topNav .Nav ul li a {
+  color: white;
+}
+.main {
+  width: 1100px;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+  overflow: hidden;
+}
+.main h2.title {
+  padding: 30px 0 10px 0;
+  font-size: 18px;
+  border-bottom: #dbf7ea 1px solid;
+  overflow: hidden;
+  color: #009ad6;
+  text-shadow: #fff 1px 1px 2px;
+}
+.main h2.title span {
+  float: right;
+  font-weight: normal;
+  font-size: 16px;
+  -webkit-animation: animations2 5s;
+}
+@keyframes animations2 {
+  0% {
+    opacity: 0;
+  }
+  base.css:50 40% {
+    opacity: 0.8;
+  }
+  base.css:53 45% {
+    opacity: 0.3;
+  }
+  base.css:56 50% {
+    opacity: 0.8;
+  }
+  base.css:59 55% {
+    opacity: 0.3;
+  }
+  base.css:62 60% {
+    opacity: 0.8;
+  }
+  base.css:65 100% {
+    opacity: 1;
+  }
+}
+.main .jq22-container {
+  padding-top: 20px;
+  border-top: #a6c3bd 1px solid;
+  font-family: Arial;
+  font-size: 14px;
+  display: none;
+}
+.main .jq22-container .fautrue {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 0px;
+  padding: 5px 17px;
+  background: #009ad6;
+  color: white;
+  display: block;
+  width: 28px;
+  border-radius: 5px;
+}
+.main .jq22-container .cntl {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 20px;
+}
+.main .jq22-container .cntl .cntl-bar-fill,
+.main .jq22-container .cntl .cntl-content,
+.main .jq22-container .cntl .cntl-image {
+  transition: all 500ms ease;
+}
+.main .jq22-container .cntl .cntl-state:nth-child(2n+2).cntl-animate .cntl-content {
+  margin-right: 0%;
+}
+.main .jq22-container .cntl .cntl-bar {
+  position: absolute;
+  width: 10px;
+  top: 0;
+  bottom: 0;
+  background-color: #ccc;
+  box-shadow: inset 0px 0px 7px -2px #000;
+}
+.main .jq22-container .cntl .cntl-bar .cntl-bar-fill {
+  background-color: #009ad6;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: all 500ms ease;
+}
+.main .jq22-container .cntl .cntl-center {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main .jq22-container .cntl .cntl-states .cntl-animate .cntl-content {
+  opacity: 1;
+  margin-left: 0%;
+}
+.main .jq22-container .cntl .cntl-states .cntl-animate .cntl-image {
+  opacity: 1;
+}
+.main .jq22-container .cntl .cntl-states .cntl-state::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.main .jq22-container .cntl .cntl-states .cntl-state:nth-child(2n+2) .cntl-content {
+  float: right;
+  margin-right: -40px;
+}
+.main .jq22-container .cntl .cntl-states ook .cntl-image {
+  opacity: 0;
+  width: 40%;
+  padding: 2%;
+}
+.main .jq22-container .cntl .cntl-states ook .cntl-image img {
+  width: 100%;
+}
+.main .jq22-container .cntl .cntl-states .cntl-state {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.main .jq22-container .cntl .cntl-states .cntl-state .cntl-content {
+  width: 45%;
+  padding: 1%;
+  background-color: rgba(238, 238, 238, 0.25);
+  border-radius: 8px;
+  border-bottom: solid 3px #009ABB;
+  float: left;
+  position: relative;
+}
+.main .jq22-container .cntl .cntl-states .cntl-state .cntl-content h4 {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.main .jq22-container .cntl .cntl-states .cntl-state .cntl-icon {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #00313C;
+  border: solid 3px #009ad6;
+  box-shadow: 0px 0px 19px -9px #000;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  color: #fff;
+}
+.main .jq22-container .cntl .cntl-states .cntl-state .cntl-center {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main .show {
+  display: block;
+}
+.main .pagination {
+  text-align: center;
+  color: #666;
+  width: 100%;
+  clear: both;
+  margin: 20px 0;
+  padding-top: 20px;
+}
+.main .pagination ul li {
+  float: left;
+  margin-right: 5px;
+  border: 1px solid #009ad6;
+  padding: 5px;
+  font-size: 14px;
+}
+.main .pagination ul li span {
+  color: #666;
+  margin: 0 2px;
+  padding: 5px 10px;
+}
+.main .pagination ul li.active {
+  background: #009ad6;
+}
+.main .pagination ul li.active span {
+  color: white;
+}
+footer {
+  width: 100%;
+  background: #1b315e;
+  color: #a5a4a4;
+  text-align: center;
+  padding: 20px 0;
+}
+footer p a {
+  color: #a5a4a4;
+  font-size: 14px;
+}
+/*返回顶部*/
+.fanhui {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 10px;
+  right: 50px;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 10px;
+  z-index: 999;
+  cursor: pointer;
+  display: none;
+  font-size: 50px;
+}

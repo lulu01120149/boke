@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul li{
+				list-style: none;
+				float:left;
+			}
+			img{
+				display: block;
+				width: 220px;
+				height: 147px;
+			}
+			#inps{
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="boxs">
+			<ul>
+				<li><img src="../images/img01.jpg" alt="" /></li>
+				<li><img src="../images/img02.jpg" alt="" /></li>
+				<li><img src="../images/img03.jpg" alt="" /></li>
+				<li><img src="../images/img04.jpg" alt="" /></li>
+				<li><img src="../images/img05.jpg" alt="" /></li>
+				<li><img src="../images/img06.jpg" alt="" /></li>
+				<li><img src="../images/img07.jpg" alt="" /></li>
+				<li><img src="../images/img08.jpg" alt="" /></li>
+				<li><img src="../images/img09.jpg" alt="" /></li>
+				<li><img src="../images/img10.jpg" alt="" /></li>
+				<li><img src="../images/img11.jpg" alt="" /></li>
+				<li><img src="../images/img12.jpg" alt="" /></li>
+			</ul>
+			<form id="inps">
+				<label for="">文章主标题：<input type="text" id="title1" name="title1"/></label>
+				<label for="">文章副标题：<input type="text" id="title2" name="title2"/></label>
+				<!--<label for="">选择图片：<input type="text" id="photo" name="photo"/></label>-->
+				<label for="">文章内容：<textarea name="content" cols="40" rows="5" placeholder="输入新闻内容" id="content"></textarea></label>
+				<input type="button" name="add" id="btn" value="添加"/>
+			</form>
+		</div>
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script>
+			(function(){
+				function Art(){
+					this.init();
+				}
+				Art.prototype = {
+					constructor:Art,
+					init:function(){
+						this.bind();
+					},
+					bind:function(){
+						var that = this;
+						$(".boxs ul li").on("click",function(){
+							var index = $(this).index();
+							that.photo = $("img").eq(index).attr("src");
+							console.log(that.photo);
+						})
+						$("#btn").on("click",function(){
+							var title1 = $("#title1").val();
+							console.log(title1)
+							var title2 = $("#title2").val();
+							var content = $("#content").val();
+							$.post("../php/search.php",{
+								"title1":title1,
+								"title2":title2,
+								"content":content,
+								"photo":that.photo
+							},function(data){
+								alert(data);
+							})
+						})
+					}
+				}
+				new Art();
+			})()
+
+		</script>
+	</body>
+</html>
